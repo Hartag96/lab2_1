@@ -28,4 +28,14 @@ public class BinarySearchTest {
         assertEquals(searchResult.isFound(), false);
     }
 
+    @Test
+    public void MultiElementSequenceValueFirstInSequence() {
+        int [] seq = {1,2,3};
+        int value = 1;
+
+        SearchResult searchResult = binarySearch.search(value, seq);
+        assertEquals(searchResult.isFound(), true);
+        assertEquals(searchResult.getPosition(), 0);
+    }
+
 }
