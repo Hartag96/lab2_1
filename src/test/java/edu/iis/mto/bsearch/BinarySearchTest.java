@@ -19,4 +19,13 @@ public class BinarySearchTest {
         assertEquals(searchResult.isFound(), true);
     }
 
+    @Test
+    public void OneElementSequenceValueNotInSequence() {
+        int [] seq = {1};
+        int value = -1;
+
+        SearchResult searchResult = binarySearch.search(value, seq);
+        assertEquals(searchResult.isFound(), false);
+    }
+
 }
