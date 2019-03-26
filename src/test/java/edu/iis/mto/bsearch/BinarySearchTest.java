@@ -3,7 +3,7 @@ package edu.iis.mto.bsearch;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BinarySearchTest {
@@ -16,7 +16,7 @@ public class BinarySearchTest {
         int value = 1;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), true);
+        assertTrue(searchResult.isFound());
     }
 
     @Test
@@ -25,7 +25,7 @@ public class BinarySearchTest {
         int value = -1;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), false);
+        assertFalse(searchResult.isFound());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class BinarySearchTest {
         int value = 1;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), true);
+        assertTrue(searchResult.isFound());
         assertEquals(searchResult.getPosition(), 0);
     }
 
@@ -44,7 +44,7 @@ public class BinarySearchTest {
         int value = 3;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), true);
+        assertTrue(searchResult.isFound());
         assertEquals(searchResult.getPosition(), seq.length-1);
     }
 
@@ -54,7 +54,7 @@ public class BinarySearchTest {
         int value = 2;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), true);
+        assertTrue(searchResult.isFound());
         assertEquals(searchResult.getPosition(), (seq.length - 1) / 2);
     }
 
@@ -64,7 +64,8 @@ public class BinarySearchTest {
         int value = -1;
 
         SearchResult searchResult = binarySearch.search(value, seq);
-        assertEquals(searchResult.isFound(), false);
+        assertFalse(searchResult.isFound());
         assertEquals(searchResult.getPosition(), -1);
     }
+
 }
