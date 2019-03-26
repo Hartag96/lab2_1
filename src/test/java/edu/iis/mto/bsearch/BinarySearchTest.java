@@ -38,4 +38,13 @@ public class BinarySearchTest {
         assertEquals(searchResult.getPosition(), 0);
     }
 
+    @Test
+    public void MultiElementSequenceValueLastInSequence() {
+        int [] seq = {1,2,3};
+        int value = 3;
+
+        SearchResult searchResult = binarySearch.search(value, seq);
+        assertEquals(searchResult.isFound(), true);
+        assertEquals(searchResult.getPosition(), seq.length-1);
+    }
 }
