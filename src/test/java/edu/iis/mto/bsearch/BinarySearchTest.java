@@ -73,7 +73,7 @@ public class BinarySearchTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void ThrowIllegalArgumentExceptionIfSequenceEmpty() {
-        int [] seq = {};
+        int [] seq = {1, 2, 3, 4, -3};
         int value = -1;
 
         SearchResult searchResult = binarySearch.search(value, seq);
